@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Restaurant Gallery</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #1d1d23;
+            overflow-x: hidden;
+            color: white;
+            padding-top: 70px; /* Space for fixed navbar */
+        }
+
+        /* --- Navbar --- */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.9) !important;
+            padding: 10px 20px;
+        }
+
+        .nav-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 45px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size:1rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff6b00;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* --- Search Bar --- */
+        .search-wrapper {
+            max-width: 250px;
+        }
+
+        .search-container {
+            display: flex;
+            background: #fff;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .search-input {
+            border: none;
+            padding: 5px 15px;
+            outline: none;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .search-button {
+            background: #FFA500;
+            border: none;
+            padding: 5px 12px;
+            color: white;
+        }
+
+        /* --- Gallery Section --- */
+        .gallery-section {
+            padding: 60px 0;
+        }
+
+        .gallery-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .gallery-card {
+            background-color: #121212;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .gallery-card:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-img {
+            height: 220px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .card-body {
+            padding: 15px;
+            text-align: center;
+            background: #25252b;
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            color: #ff6b00;
+            font-weight: 600;
+        }
+
+        /* --- Footer --- */
+        .bottom-nav {
+            background-color: #121212;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-logo {
+            max-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .nav-bottom .nav-link {
+            color: white !important;
+            font-size: 0.9rem;
+        }
+
+        .icon-s a {
+            margin: 0 10px;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .icon-s a:hover {
+            color: #ff6b00;
+            transform: translateY(-3px);
+        }
+
+        /* --- Responsive Queries --- */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none; /* Mobile menu hidden by default */
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: rgba(0,0,0,0.95);
+                flex-direction: column;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .logo {
+                margin-left: 0 !important;
+            }
+
+            .search-wrapper {
+                display: none; /* Hide search on mobile to save space */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .gallery-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top">
+        <div class="nav-container">
+            <div class="hamburger" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="Gallery.html">GALLERY</a></li>
+                <li><a href="About-Us.html">ABOUT</a></li>
+                <li><a href="Contact Us.html">CONTACT</a></li>
+				<li><a href="Location.html">LOCATION</a></li>
+            </ul>
+
+            <div class="logo">
+                <img src="group 1/LOGO.png" alt="Logo">
+            </div>
+
+            <div class="search-wrapper">
+                <form class="search-container">
+                    <input type="text" class="search-input" placeholder="Search...">
+                    <button type="submit" class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="gallery-title">OUR DELICIOUS GALLERY</h2>
+            <div class="row">
+                <!-- Gallery Item 1 -->
+                <div class="col-sm-6 col-md-4">
+                    <div class="card gallery-card">
+                        <img src="group 4/20130712_14_groenteburger.jpg" class="gallery-img" alt="Burger">
+                        <div class="card-body">
+                            <div class="product-name">Classic Burger</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="col-sm-6 col-md-4">
+                    <div class="card gallery-card">
+                        <img src="group 3/Pizza_.png" class="gallery-img" alt="Pizza">
+                        <div class="card-body">
+                            <div class="product-name">Pizza</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="col-sm-6 col-md-4">
+                    <div class="card gallery-card">
+                        <img src="group 4/Pasta.png" class="gallery-img" alt="Pasta">
+                        <div class="card-body">
+                            <div class="product-name">Pasta</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gallery Item 4 -->
+                <div class="col-sm-6 col-md-4">
+                    <div class="card gallery-card">
+                        <img src="group 4/Dosa .png" class="gallery-img" alt="Dosa">
+                        <div class="card-body">
+                            <div class="product-name">Dosa</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gallery Item 5 -->
+                <div class="col-sm-6 col-md-4">
+                    <div class="card gallery-card">
+                        <img src="group 4/Dessert 1.png" class="gallery-img" alt="Dessert">
+                        <div class="card-body">
+                            <div class="product-name">Dessert</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gallery Item 6 -->
+                <div class="col-sm-6 col-md-4">
+                    <div class="card gallery-card">
+                        <img src="group 4/Pumpkin-Pudding.jpg" class="gallery-img" alt="Pudding">
+                        <div class="card-body">
+                            <div class="product-name">Pumpkin Pudding</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bottom-nav">
+        <div class="container text-center">
+            <img src="group 8/LOGO2.png" alt="Logo" class="footer-logo img-fluid">
+            
+            <nav class="nav-bottom mb-4">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="icon-s mb-4">
+                <a href="#"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#"><i class="fab fa-youtube fa-lg"></i></a>
+                <a href="#"><i class="fab fa-whatsapp fa-lg"></i></a>
+            </div>
+
+            <div class="pt-3 border-top border-secondary">
+                <p class="small text-muted">© 2026 Copyright: foodlover.com | Design by Akash Sharma</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Toggle mobile menu
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

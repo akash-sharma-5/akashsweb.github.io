@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | Dark Restaurant</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("img/contactus.jpg");
+      background-size: cover;
+      background-attachment: fixed;
+      background-color: #121212; /* Fallback */
+      color: white;
+      padding-top: 80px; /* Space for fixed navbar */
+    }
+
+    /* --- Navbar Section --- */
+    .navbar {
+      padding: 0.5rem 1rem;
+      transition: 0.3s;
+    }
+
+    .nav-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff6b00;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* --- Search Bar --- */
+    .search-wrapper {
+      max-width: 300px;
+    }
+
+    .search-container {
+      display: flex;
+      border: 1px solid #444;
+      border-radius: 50px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 5px 15px;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      width: 100px;
+    }
+
+    .search-button {
+      background: #FB9C00;
+      border: none;
+      padding: 5px 15px;
+      color: white;
+    }
+
+    /* --- Contact Section --- */
+    .contact-container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 15px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #FB9C00;
+      font-weight: bold;
+    }
+
+    .contact-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .contact-form {
+      flex: 2;
+      min-width: 300px;
+      background-color: rgba(30, 30, 30, 0.9);
+      padding: 2.5rem;
+      border-radius: 12px;
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background: #2c2c2c;
+      color: white;
+    }
+
+    .contact-form button {
+      background: #FB9C00;
+      color: black;
+      border: none;
+      padding: 12px 30px;
+      font-weight: bold;
+      border-radius: 8px;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 280px;
+      background: rgba(251, 156, 0, 0.1);
+      padding: 2rem;
+      border-radius: 12px;
+      border-left: 4px solid #FB9C00;
+    }
+
+    /* --- Bottom Nav & Footer --- */
+    .bottom-nav {
+      background-color: #000;
+      padding: 50px 0 20px 0;
+      margin-top: 50px;
+    }
+
+    .nav-bottom .nav-link {
+      color: white !important;
+      padding: 10px 15px;
+    }
+
+    .icon-s a {
+      margin: 0 10px;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .icon-s a:hover {
+      transform: translateY(-5px);
+    }
+
+    /* --- RESPONSIVE QUERIES --- */
+    @media (max-width: 992px) {
+      .nav-links {
+        display: none; /* Hide for mobile toggle */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.95);
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .search-wrapper {
+        max-width: 150px;
+      }
+
+      .search-button span {
+        display: none;
+      }
+    }
+
+    @media (max-width: 576px) {
+      header h1 { font-size: 1.8rem; }
+      .contact-form { padding: 1.5rem; }
+      .logo img { height: 40px; }
+      .search-wrapper { display: none; } 
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark fixed-top" style="background-color: rgba(0,0,0,0.9)">
+    <div class="nav-container">
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="menu.html">MENU</a></li>
+        <li><a href="Gallery.html">GALLERY</a></li>
+        <li><a href="About-Us.html">ABOUT</a></li>
+        <li><a href="Contact Us.html">CONTACT</a></li>
+        <li><a href="Location.html">LOCATION</a></li>
+      </ul>
+
+      <div class="logo">
+        <img src="group 1/LOGO.png" alt="Logo" />
+      </div>
+
+      <div class="search-wrapper">
+        <form class="search-container">
+          <input type="text" class="search-input" placeholder="Search...">
+          <button type="submit" class="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Us Content -->
+  <div class="contact-container">
+    <header class="text-center">
+      <h1>Contact Us</h1>
+      <p>Reach out for reservations, feedback or just to say hi!</p>
+    </header>
+
+    <div class="contact-content">
+      <form class="contact-form">
+        <label>Name</label>
+        <input type="text" placeholder="Your full name" required>
+
+        <label>Email</label>
+        <input type="email" placeholder="your@email.com" required>
+
+        <label>Message</label>
+        <textarea rows="5" placeholder="Write your message here..." required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div class="contact-info">
+        <h4 class="text-warning">Visit Us</h4>
+        <p>🍽️ Connaught Place, <br>Rajiv Chowk, 123 Foodie Street<br>Delhi, India</p>
+
+        <h4 class="text-warning mt-4">Call / Email</h4>
+        <p>📞 +91 98765 43210<br>✉️ contact@foodlover.com</p>
+
+        <h4 class="text-warning mt-4">Follow Us</h4>
+        <div class="social-links">
+          <a href="#" class="text-white mr-2">Instagram</a>
+          <a href="#" class="text-white mr-2">Facebook</a>
+          <a href="#" class="text-white">Twitter</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <section class="bottom-nav">
+    <div class="container text-center">
+      <img src="group 8/LOGO2.png" alt="logo" class="img-fluid mb-4" style="max-width:250px;">
+      
+      <nav class="nav-bottom mb-4">
+        <ul class="nav justify-content-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="About-Us.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="menu.html">Foods</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contact Us.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="icon-s mb-4">
+        <a href="#"><i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i></a>
+        <a href="#"><i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i></a>
+        <a href="#"><i class="fab fa-whatsapp fa-lg" style="color: #25d366;"></i></a>
+      </div>
+
+      <div class="border-top pt-3" style="border-color: #333 !important;">
+        <p class="small text-muted">© 2026 Copyright: foodlover.com | Design by Akash Sharma</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // Hamburger Menu Toggle
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.getElementById('nav-links').classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

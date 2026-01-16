@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Foodies - Our Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1d1d23;
+            overflow-x: hidden;
+            color: white;
+        }
+
+        /* Navbar section */
+        .navbar-sec {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ff6b00;
+        }
+
+        /* Search Bar Responsive */
+        .search-wrapper {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .search-container {
+            display: flex;
+            background: #fff;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 8px 15px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .search-button {
+            background: #FFA500;
+            color: white;
+            border: none;
+            padding: 0 15px;
+            cursor: pointer;
+        }
+
+        /* Menu Card Styling */
+        .card {
+            background-color: #2a2a2a;
+            border: none;
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+            width: 100% !important; /* Allow Bootstrap grid to decide width */
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Bottom Nav / Footer */
+        .bottom-nav {
+            background-color: #3a3a40;
+            padding: 50px 0;
+            min-height: auto; /* Changed from fixed height */
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none; /* Hide links on tablet/mobile */
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                padding: 20px 0;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+            .navbar {
+                flex-wrap: wrap;
+            }
+            .search-wrapper {
+                max-width: 100%;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar navbar-dark fixed-top" style="background-color: rgba(0,0,0,0.9)">
+        <div class="container-fluid">
+            <div class="hamburger" id="hamburger">
+                &#9776;
+            </div>
+
+            <div class="logo">
+                <img src="group 1/LOGO.png" alt="Food Logo" onerror="this.src='https://via.placeholder.com/150x50?text=LOGO'"/>
+            </div>
+
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#">MENU</a></li>
+                <li><a href="Gallery.html">GALLERY</a></li>
+                <li><a href="About-Us.html">ABOUT</a></li>
+                <li><a href="Contact Us.html">CONTACT</a></li>
+            </ul>
+
+            <div class="search-wrapper">
+                <form class="search-container">
+                    <input type="text" class="search-input" placeholder="Search menu...">
+                    <button type="submit" class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="ourmenu" style="margin-top: 8rem">
+        <div class="container text-center">
+            <h1 class="display-4 text-light mb-5">OUR MENU</h1>
+        </div>
+    </section>
+
+    <section class="menu-items mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="card">
+                        <img class="card-img-top" src="group 4/20130712_14_groenteburger.jpg" alt="Burger" onerror="this.src='https://via.placeholder.com/300x200'">
+                        <div class="card-body">
+                            <h4 class="card-title text-light">Burger</h4>
+                            <p class="card-text text-secondary">Potato patty with fresh lettuce and secret sauce.</p>
+                            <a href="#" class="btn btn-warning btn-block">Price: Rs 200</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="card">
+                        <img class="card-img-top" src="group 4/Dosa .png" alt="Dosa" onerror="this.src='https://via.placeholder.com/300x200'">
+                        <div class="card-body">
+                            <h4 class="card-title text-light">Dosa</h4>
+                            <p class="card-text text-secondary">Crispy South Indian crepe served with chutney.</p>
+                            <a href="#" class="btn btn-warning btn-block">Price: Rs 200</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="card">
+                        <img class="card-img-top" src="group 6/food 3.png" alt="Pizza" onerror="this.src='https://via.placeholder.com/300x200'">
+                        <div class="card-body">
+                            <h4 class="card-title text-light">Pizza</h4>
+                            <p class="card-text text-secondary">Cheesy delight with hand-picked toppings.</p>
+                            <a href="#" class="btn btn-warning btn-block">Price: Rs 200</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="card">
+                        <img class="card-img-top" src="group 4/momo.png" alt="Momos" onerror="this.src='https://via.placeholder.com/300x200'">
+                        <div class="card-body">
+                            <h4 class="card-title text-light">Momos</h4>
+                            <p class="card-text text-secondary">Steamed dumplings with spicy dipping sauce.</p>
+                            <a href="#" class="btn btn-warning btn-block">Price: Rs 200</a>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="card">
+                        <img class="card-img-top" src="group 4/India-Mahabhog-Thali.jpg" alt="India-Mahabhog-Thali" onerror="this.src='https://via.placeholder.com/300x200'">
+                        <div class="card-body">
+                            <h4 class="card-title text-light">Mahabhog-Thali</h4>
+                            <p class="card-text text-secondary">Traditional Indian vegetarian cuisine.</p>
+                            <a href="#" class="btn btn-warning btn-block">Price: Rs 200</a>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="card">
+                        <img class="card-img-top" src="group 4/Dhokhla.png" alt="Dhokla" onerror="this.src='https://via.placeholder.com/300x200'">
+                        <div class="card-body">
+                            <h4 class="card-title text-light">Dhokla</h4>
+                            <p class="card-text text-secondary">Made from fermented rice and lentil batter. </p>
+                            <a href="#" class="btn btn-warning btn-block">Price: Rs 200</a>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="card">
+                        <img class="card-img-top" src="group 4/Pasta.png" alt="Pasta" onerror="this.src='https://via.placeholder.com/300x200'">
+                        <div class="card-body">
+                            <h4 class="card-title text-light">Pasta</h4>
+                            <p class="card-text text-secondary">Made dough of wheat flour mixed with water. </p>
+                            <a href="#" class="btn btn-warning btn-block">Price: Rs 200</a>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="card">
+                        <img class="card-img-top" src="group 4/Pumpkin-Pudding.jpg" alt="Pumpkin-Pudding" onerror="this.src='https://via.placeholder.com/300x200'">
+                        <div class="card-body">
+                            <h4 class="card-title text-light">Pumpkin-Pudding</h4>
+                            <p class="card-text text-secondary">Pumpkin pudding is a creamy, spiced dessert. </p>
+                            <a href="#" class="btn btn-warning btn-block">Price: Rs 200</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<section class="bottom-nav">
+    <div class="container text-center">
+        <img src="group 8/LOGO2.png" alt="logo-2" class="mb-4" style="width:200px;" onerror="this.src='https://via.placeholder.com/200x80'">
+        
+        <ul class="nav justify-content-center mb-4">
+            <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">About</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Services</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
+        </ul>
+
+        <div class="icon-s mb-4">
+            <a href="#" class="mx-2"><i class="fab fa-facebook-f fa-2x" style="color: #3b5998;"></i></a>
+            <a href="#" class="mx-2"><i class="fab fa-instagram fa-2x" style="color: #ac2bac;"></i></a>
+            <a href="#" class="mx-2"><i class="fab fa-whatsapp fa-2x" style="color: #25d366;"></i></a>
+        </div>
+
+        <p class="text-secondary">© 2026 FoodLover | Designed by Akash Sharma</p>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Hamburger Menu Toggle Logic
+    document.getElementById('hamburger').addEventListener('click', function() {
+        document.getElementById('nav-links').classList.toggle('active');
+    });
+</script>
+
+</body>
+</html>
